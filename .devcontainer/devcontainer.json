@@ -1,15 +1,17 @@
 {
-	"name": "ga2-ed9839",
-	"features": {
-		"ghcr.io/devcontainers/features/python:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"astral-sh.uv",
-				"ms-python.python"
-			]
-		}
-	},
-	"postCreateCommand": "python -m pip install --upgrade pip && python -m pip install fastapi"
+  "name": "ga2-ed9839",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astral-sh.uv",
+        "ms-python.python"
+      ]
+    }
+  },
+  // Note: Using 'uv pip install' as requested to prime dependencies
+  "postCreateCommand": "uv pip install fastapi"
 }
